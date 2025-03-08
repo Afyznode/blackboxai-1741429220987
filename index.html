@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nad.fun Clone</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            background-color: #0a0a0f;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .card-gradient {
+            background: linear-gradient(45deg, #7c3aed, #4c1d95);
+        }
+        .animate-pulse-slow {
+            animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: .7;
+            }
+        }
+        .hover-scale {
+            transition: transform 0.2s;
+        }
+        .hover-scale:hover {
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body class="text-white min-h-screen">
+    <!-- Navigation -->
+    <nav class="border-b border-gray-800/50 px-4 py-3">
+        <div class="container mx-auto flex items-center justify-between">
+            <div class="flex items-center space-x-8">
+                <a href="#" class="text-2xl font-bold text-[#7c3aed] flex items-center">
+                    <i class="fas fa-diamond mr-2"></i>
+                    Nad.fun
+                </a>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#" class="text-gray-300 hover:text-[#7c3aed] transition duration-300">TERMINAL</a>
+                    <a href="#" class="text-gray-300 hover:text-[#7c3aed] transition duration-300">REWARDS</a>
+                    <a href="#" class="text-gray-300 hover:text-[#7c3aed] transition duration-300">REFERRAL</a>
+                    <a href="#" class="text-gray-300 hover:text-[#7c3aed] transition duration-300">FEED</a>
+                    <a href="#" class="text-gray-300 hover:text-[#7c3aed] transition duration-300">RANKING</a>
+                    <a href="#" class="text-gray-300 hover:text-[#7c3aed] transition duration-300">DOCS</a>
+                </div>
+            </div>
+            <div class="flex items-center space-x-4">
+                <div class="relative">
+                    <input type="text" placeholder="Search..." 
+                           class="bg-gray-900/50 text-gray-300 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#7c3aed] w-48"
+                           style="backdrop-filter: blur(10px);">
+                    <kbd class="absolute right-3 top-2.5 px-1.5 py-0.5 text-xs text-gray-400 bg-gray-800 rounded">⌘K</kbd>
+                </div>
+                <a href="#" class="text-gray-300 hover:text-[#7c3aed] transition duration-300">
+                    <i class="fab fa-twitter text-xl"></i>
+                </a>
+                <a href="#" class="text-gray-300 hover:text-[#7c3aed] transition duration-300">
+                    <i class="fab fa-discord text-xl"></i>
+                </a>
+                <button class="bg-[#7c3aed] hover:bg-[#6d28d9] text-white px-6 py-2 rounded-lg transition duration-300 font-medium">
+                    Connect
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Create Coin Button -->
+        <div class="text-center mb-12">
+            <button class="bg-[#7c3aed] hover:bg-[#6d28d9] text-white text-lg px-8 py-3 rounded-xl transition duration-300 transform hover:scale-105 font-medium">
+                Create Coin
+            </button>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="flex flex-wrap items-center mb-8 gap-4">
+            <button class="bg-[#7c3aed] text-white px-4 py-2 rounded-lg font-medium">Latest Trade</button>
+            <button class="bg-gray-800/50 text-gray-300 px-4 py-2 rounded-lg hover:bg-gray-700/50 transition duration-300">Creation Time</button>
+            <button class="bg-gray-800/50 text-gray-300 px-4 py-2 rounded-lg hover:bg-gray-700/50 transition duration-300">Market Cap</button>
+            <div class="ml-auto flex items-center">
+                <span class="text-gray-400 mr-2">animations</span>
+                <div class="w-12 h-6 bg-[#7c3aed] rounded-full relative cursor-pointer">
+                    <div class="w-4 h-4 bg-white rounded-full absolute top-1 right-1 transition-all duration-300"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Activity -->
+        <div class="flex items-center space-x-4 mb-8 overflow-x-auto py-2 scrollbar-hide">
+            <div class="flex-shrink-0 bg-gray-800/30 rounded-lg px-4 py-2 flex items-center space-x-2">
+                <span class="text-[#7c3aed]">0x9c54</span>
+                <span class="text-green-500">BOUGHT</span>
+                <span>0.5 MON</span>
+                <span class="text-gray-400">of</span>
+                <span class="text-[#7c3aed]">JH</span>
+            </div>
+            <div class="flex-shrink-0 bg-gray-800/30 rounded-lg px-4 py-2 flex items-center space-x-2">
+                <span class="text-[#7c3aed]">0x70CA</span>
+                <span class="text-red-500">SOLD</span>
+                <span>0.0532 MON</span>
+                <span class="text-gray-400">of</span>
+                <span class="text-[#7c3aed]">NNad</span>
+            </div>
+        </div>
+
+        <!-- Coin Cards Grid -->
+        <div class="grid md:grid-cols-2 gap-6">
+            <!-- Coin Card 1 -->
+            <div class="bg-gray-900/50 rounded-xl overflow-hidden hover-scale">
+                <div class="h-48 card-gradient flex items-center justify-center animate-pulse-slow">
+                    <i class="fas fa-crown text-6xl text-white/80"></i>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <span class="text-sm text-gray-400">Created By</span>
+                        <span class="ml-2 bg-gray-800/50 px-2 py-1 rounded text-sm text-[#7c3aed]">0xDDac</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Monad Friends</h3>
+                    <div class="bg-gray-800/50 inline-block px-3 py-1 rounded-lg text-sm mb-4">FRIENDS</div>
+                    <p class="text-gray-400 mb-4">Monad Friends, Memecoin Of Monad Testnet Chain.</p>
+                    <div class="relative pt-1">
+                        <div class="flex mb-2 items-center justify-between">
+                            <div>
+                                <span class="text-xs font-semibold inline-block text-[#7c3aed]">
+                                    Bonding Curve Progress
+                                </span>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-xs font-semibold inline-block text-[#7c3aed]">
+                                    61%
+                                </span>
+                            </div>
+                        </div>
+                        <div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-gray-800/50">
+                            <div style="width:61%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-[#7c3aed] transition-all duration-500"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coin Card 2 -->
+            <div class="bg-gray-900/50 rounded-xl overflow-hidden hover-scale">
+                <div class="h-48 card-gradient flex items-center justify-center animate-pulse-slow">
+                    <i class="fas fa-user-ninja text-6xl text-white/80"></i>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center mb-4">
+                        <span class="text-sm text-gray-400">Created By</span>
+                        <span class="ml-2 bg-gray-800/50 px-2 py-1 rounded text-sm text-[#7c3aed]">0x70CA</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">NinjaNad</h3>
+                    <div class="bg-gray-800/50 inline-block px-3 py-1 rounded-lg text-sm mb-4">NNad</div>
+                    <p class="text-gray-400 mb-4">Ninja</p>
+                    <div class="relative pt-1">
+                        <div class="flex mb-2 items-center justify-between">
+                            <div>
+                                <span class="text-xs font-semibold inline-block text-[#7c3aed]">
+                                    Bonding Curve Progress
+                                </span>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-xs font-semibold inline-block text-[#7c3aed]">
+                                    100%
+                                </span>
+                            </div>
+                        </div>
+                        <div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-gray-800/50">
+                            <div style="width:100%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-[#7c3aed] transition-all duration-500"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
